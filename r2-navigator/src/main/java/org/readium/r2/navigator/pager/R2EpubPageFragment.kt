@@ -96,8 +96,8 @@ class R2EpubPageFragment : Fragment() {
                 webView.activity.windowManager.defaultDisplay.getMetrics(metrics)
 
 
-                val topDecile = webView.contentHeight - 1.15 * metrics.heightPixels
-                val bottomDecile = (webView.contentHeight - metrics.heightPixels).toDouble()
+                val topDecile = (webView.contentHeight - 1.15 * metrics.heightPixels).toInt()
+                val bottomDecile = (webView.contentHeight - metrics.heightPixels).toInt()
 
                 when (scrollY) {
                     in topDecile..bottomDecile -> {
