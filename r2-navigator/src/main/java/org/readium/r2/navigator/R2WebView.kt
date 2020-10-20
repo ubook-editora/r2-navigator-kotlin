@@ -47,7 +47,7 @@ class R2WebView(context: Context, attrs: AttributeSet) : R2BasicWebView(context,
         uiScope.launch {
             if (mCurItem < numPages - 1) {
                 mCurItem++
-                listener.onPageChanged(mCurItem + 1, numPages, url)
+                listener.onPageChanged(mCurItem + 1, numPages, url!!)
             }
         }
     }
@@ -58,7 +58,7 @@ class R2WebView(context: Context, attrs: AttributeSet) : R2BasicWebView(context,
         uiScope.launch {
             if (mCurItem > 0) {
                 mCurItem--
-                listener.onPageChanged(mCurItem + 1, numPages, url)
+                listener.onPageChanged(mCurItem + 1, numPages, url!!)
             }
         }
     }
@@ -323,7 +323,7 @@ class R2WebView(context: Context, attrs: AttributeSet) : R2BasicWebView(context,
         }
 
         if (post) {
-            listener.onPageChanged(item + 1, numPages, url)
+            listener.onPageChanged(item + 1, numPages, url!!)
         }
 
 

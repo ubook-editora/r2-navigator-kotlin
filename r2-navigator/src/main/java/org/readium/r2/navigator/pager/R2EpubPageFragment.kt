@@ -245,10 +245,10 @@ class R2EpubPageFragment : Fragment() {
                 val href = resourceUrl + anchor
                 webView.loadUrl(href)
             } else {
-                webView.loadUrl(resourceUrl)
+                webView.loadUrl(resourceUrl!!)
             }
         } ?: run {
-            webView.loadUrl(resourceUrl)
+            webView.loadUrl(resourceUrl!!)
         }
 
 
