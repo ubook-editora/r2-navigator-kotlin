@@ -15,10 +15,10 @@ group='com.github.readium'
 
 android {
 
-    compileSdkVersion 29
+    compileSdkVersion 30
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 29
+        targetSdkVersion 30
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     compileOptions {
@@ -36,12 +36,14 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-    implementation 'com.shopgun.android:utils:1.0.9'
+    implementation 'com.github.shopgun:markhor:1.1.0'
+
     if (findProject(':r2-shared')) {
         implementation project(':r2-shared')
     } else {
         implementation "com.github.readium:r2-shared-kotlin:1.1.6"
     }
+
     implementation "androidx.appcompat:appcompat:1.2.0-alpha01"
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'androidx.webkit:webkit:1.1.0'
@@ -51,7 +53,7 @@ dependencies {
     implementation 'joda-time:joda-time:2.9.9'
     implementation "androidx.legacy:legacy-support-core-ui:1.0.0"
 
-    implementation 'com.duolingo.open:rtl-viewpager:1.0.3'
+    implementation 'com.github.ubook-editora:rtl-viewpager:v2.0.1'
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
 
     implementation 'com.jakewharton.timber:timber:4.7.1'
